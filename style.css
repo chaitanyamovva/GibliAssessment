@@ -1,0 +1,14 @@
+.error{
+    display: none; 
+    font-style:italic; 
+    color:red
+}
+
+#chartContainer{
+    height: 370px; 
+    width: 100%
+}
+
+.hidden{
+    display: none;
+}

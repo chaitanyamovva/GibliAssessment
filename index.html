@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="text-center m-4 pt-3">
+        <h1>Welcome to the Assessment</h1>
+    </div>
+    <div class="row m-5">
+        <div class="col-4">
+            <h5>Please select the Input</h5>
+            <div class="row mx-2 mb-4">
+                <div class="input-group mb-2 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Start Time</span>
+                    </div>
+                    <input id="start_time" name="start_time" type="number" class="form-control" placeholder="Numbers only">
+                </div>
+                <p id="start_err" class="ml-2 pt-1 error">Please enter the start time.</p>
+            </div>
+
+            <div class="row mx-2 mb-4">
+                <div class="input-group mb-2 text-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">End Time</span>
+                    </div>
+                    <input id="end_time" name="end_time" type="number" class="form-control" placeholder="Numbers only">
+                </div>
+                <p id="end_err" class="ml-2 pt-1 error">Please enter the end time.</p>
+
+            </div>
+
+            <div class="row mx-2 mb-4">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Ride Attribute</span>
+                    </div>
+                    <select class="custom-select" id="attribute">
+                        <option selected>Choose...</option>
+                        <option value="1">CdA</option>
+                        <option value="2">Speed</option>
+                        <option value="3">Power</option>
+                        <option value="4">Heart Rate</option>
+                        <option value="5">Cadence</option>
+                    </select>
+                </div>
+                <p id="att_err" class="ml-2 pt-1 error">Please select the attribute.</p>
+            </div>
+
+            <div class="input-group mx-5">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="linearcheck">
+                <label class="form-check-label" for="linearcheck">
+                    Show Linear Regression
+                </label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary mt-3" onclick="submit()">Get Data</button>
+        </div>
+
+        <div class="col-8 text-center">
+            <div id="chartContainer"></div>
+            <h6 id="zoomhint" class="hidden">You can select(hold and drag) a region to zoom in.</h6>
+        </div>
+    </div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+
+</html>
